@@ -7,7 +7,7 @@ var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-  cat.all(function (data) {
+  burger.selectAll(function (data) {
     var hbsObject = {
       burgers: data
     };
@@ -20,8 +20,8 @@ router.post("/api/burgers", function (req, res) {
   burger.insertOne([
     "burger_name", "devoured"
   ], [
-    req.body.name, req.body.devoured
-    // req.body.name, "devoured" ??or?? devoured
+    req.body.burger_name, false
+    // req.body.name, "!devoured" ??or?? !devoured
   ], function (result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });

@@ -15,7 +15,7 @@ Create a button in index.handlebars that will submit the user input into the dat
   {{#unless devoured}}
   {{!-- {{> cats/cat-block sleep=true}} --}}
   <li>
-    {{name}}
+    {{burger_name}}
 
     {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
 		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
@@ -32,14 +32,14 @@ Create a button in index.handlebars that will submit the user input into the dat
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-  {{name}}
+  {{burger_name}}
   {{!-- {{> cats/cat-block sleep=false}} --}}
   {{/if}}
   {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
-<form class="create-form">
+<form class="create-burger">
 
   <div class="form-group">
     <label for="bu">Enter a Burger you want to eat, click the 'Submit' button</label>
@@ -59,7 +59,7 @@ Create a button in index.handlebars that will submit the user input into the dat
     <input type="radio" name="sleepy" value="0"> Awake
   </div> --}}
 
-  <button type="submit">Submit</button>
+  <button class="add-burger" type="button">Submit</button>
 </form>
 
 {{!-- v: from quotesapp for reference --}}
