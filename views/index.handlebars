@@ -1,6 +1,6 @@
-<img src="../public\assets\image\Vegan-Quinoa-Beet-Burger.jpg">
+<img src=".../public/assets/image/Vegan-Quinoa-Beet-Burger.png">
 
-<p>Eat-Da-Burger</p>
+<p class="text-center" class="aclonica">Eat-Da-Burger</p>
 
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
 Create a button in index.handlebars that will submit the user input into the database. --}}
@@ -9,41 +9,48 @@ Create a button in index.handlebars that will submit the user input into the dat
 {{!-- <h1>Cats!</h1> --}}
 
 {{!-- <h2>Undevoured Burgers</h2> --}}
+<div class="row">
+  <div class="col-6" class="aclonica">
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{!-- {{> cats/cat-block sleep=true}} --}}
+      <li>
+        {{burger_name}}
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{!-- {{> cats/cat-block sleep=true}} --}}
-  <li>
-    {{burger_name}}
-
-    {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+        {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
 		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
 	</button> --}}
 
-    <button class="devour-burger" data-id="{{this.id}}">DEVourE!</button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
+        <button class="devour-burger" data-id="{{this.id}}">DEVourE!</button>
+      </li>
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
 
-{{!-- <h2>Devoured Burgers</h2> --}}
+  {{!-- <h2>Devoured Burgers</h2> --}}
+  <div class="col-6" class="aclonica">
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{burger_name}} <br>
+      {{!-- {{> cats/cat-block sleep=false}} --}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{burger_name}}
-  {{!-- {{> cats/cat-block sleep=false}} --}}
-  {{/if}}
-  {{/each}}
-</ul>
+<h2 class="text-center">Add a Burger</h2>
+<form class="create-burger" class="text-center">
 
-<h2>Add a Burger</h2>
-<form class="create-burger">
-
-  <div class="form-group">
-    <label for="bu">Enter a Burger you want to eat, click the 'Submit' button</label>
-    <textarea id="burg" name="burger" rows="8" cols="40"></textarea>
+  <div class="form-group" class="text-center" class="d-flex justify-content-center">
+    <label class="aclonica" class="text-center" class="d-flex justify-content-center" for="bu">Enter a Burger you want
+      to eat, click the
+      'Submit' button</label> <br>
+    <textarea id="burg" name="burger" rows="8" cols="40" class="text-center"
+      class="d-flex justify-content-center"></textarea>
     {{!-- <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
     <input type="text" id="bu" name="name"> --}}
   </div>
@@ -59,11 +66,11 @@ Create a button in index.handlebars that will submit the user input into the dat
     <input type="radio" name="sleepy" value="0"> Awake
   </div> --}}
 
-  {{!-- <button class="add-burger" type="button">Submit</button>
-</form> --}}
+  <button class="text-center" class="d-flex justify-content-center" class="add-burger" type="button">Submit</button>
+</form>
 
-  {{!-- v: from quotesapp for reference --}}
-  {{!-- <ul>
+{{!-- v: from quotesapp for reference --}}
+{{!-- <ul>
   {{#each burgers}}
   <li>
     <p><span class="label"></span> {{this.type}}</p>
@@ -80,16 +87,9 @@ Create a button in index.handlebars that will submit the user input into the dat
 
 <form class="create-form">
 
-  <div class="form-group">
-    {{!-- <label for="auth">Enter a burger you want to eat Click the 'Submit' button</label> --}}
-  <input type="text" id="burg" name="burger">
-  </div>
+
 
   {{!-- <div class="form-group">
     <label for="quo">Quote:</label>
     <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
   </div> --}}
-
-  <button type="submit">Submit</button>
-  <h3>Enter a burger you want to eat Click the 'Submit' button</h3>
-</form> --}}
